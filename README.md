@@ -96,45 +96,9 @@ car-rental-system/
 4. **Access the application:**
    Open your browser and navigate to `http://localhost:8000`
 
-## Default Credentials
-
-After importing the database schema, these sample accounts are available:
-
-- **Agency:** contact@premiumcars.com / password: password
-- **Customer:** john.doe@email.com / password: password
-
 ## Color Scheme
 
 - **Primary Color:** Dark Navy (#1a1a2e)
 - **Accent Color:** Gold/Orange (#f39c12)
 - **Background:** White/Light Grey
 
-## Security Features
-
-- Password hashing using `password_hash()`
-- PDO prepared statements for SQL injection prevention
-- Session-based authentication
-- Input validation and sanitization
-- Role-based access control
-
-## Responsive Design
-
-The application is fully responsive and works on:
-- Desktop computers
-- Tablets
-- Mobile devices
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## License
-
-This project is for educational purposes.
-
-## Support
-
-For any issues or questions, please contact support.
