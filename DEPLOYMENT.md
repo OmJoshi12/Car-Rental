@@ -1,76 +1,56 @@
-# Deployment Guide for Car Rental System
+# Free Hosting Options for Car Rental System
 
-## Free Hosting Setup
+## Option 1: InfinityFree (Recommended)
+- **Free PHP hosting with MySQL**
+- **URL**: https://infinityfree.net/
+- **Features**: PHP 8.2, MySQL, 5GB storage, 400MB RAM
+- **Steps**:
+  1. Sign up at InfinityFree
+  2. Create a new website
+  3. Upload your files via File Manager or FTP
+  4. Import `database_schema.sql` in phpMyAdmin
+  5. Update `config/config.php` with your database credentials
 
-### Step 1: Set up Free MySQL Database
+## Option 2: 000webhost
+- **Free PHP hosting with MySQL**
+- **URL**: https://www.000webhost.com/
+- **Features**: PHP 7.4, MySQL, 1GB storage
+- **Steps**: Similar to InfinityFree
 
-1. **Go to [PlanetScale](https://planetscale.com/)**
-   - Sign up for free account
-   - Create new database: `car_rental_system`
-   - Get connection details (host, username, password)
+## Option 3: Heroku (Free Tier)
+- **URL**: https://www.heroku.com/
+- **Steps**:
+  1. Install Heroku CLI
+  2. Create `Procfile` and `composer.json`
+  3. Deploy using Git
 
-2. **Alternative: [Railway](https://railway.app/)**
-   - Sign up for free account
-   - Add MySQL service
-   - Get connection details
+## Option 4: Vercel (Static Version)
+Convert to static HTML/CSS/JS for demo purposes only.
 
-### Step 2: Deploy to Netlify
+## Quick Deployment Steps for InfinityFree:
 
-1. **Push to GitHub**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/OmJoshi12/Car-Rental.git
-   git push -u origin main
+1. **Sign up** at https://infinityfree.net/
+2. **Create website** with your desired subdomain
+3. **Access control panel** and open File Manager
+4. **Upload all files** from your project folder
+5. **Go to MySQL Database** in control panel
+6. **Create database** and note credentials
+7. **Import `database_schema.sql`** via phpMyAdmin
+8. **Update `config/config.php`** with your database details:
+   ```php
+   define('DB_HOST', 'your-db-host');
+   define('DB_NAME', 'your-db-name');
+   define('DB_USER', 'your-db-user');
+   define('DB_PASS', 'your-db-password');
    ```
+9. **Visit your website** using the provided URL
 
-2. **Connect Netlify**
-   - Go to [netlify.com](https://netlify.com)
-   - Sign up/login with GitHub
-   - Click "New site from Git"
-   - Select your repository
-   - Deploy settings:
-     - Build command: `echo 'Building PHP application...'`
-     - Publish directory: `.`
-   - Add environment variables:
-     - `DB_HOST`: your MySQL host
-     - `DB_NAME`: `car_rental_system`
-     - `DB_USER`: your MySQL username
-     - `DB_PASS`: your MySQL password
-     - `APP_URL`: your Netlify URL
+## Files to Exclude:
+- `app_backup.py`, `app_enhanced.py`, `app_new.py`, `app_v2.py`
+- `desktop.ini`
+- `.git/` folder
 
-### Step 3: Import Database Schema
-
-1. **Using PlanetScale/Railway console**
-   - Run the SQL commands from `database_schema.sql`
-
-2. **Or use MySQL client**
-   ```bash
-   mysql -h YOUR_HOST -u YOUR_USER -p YOUR_DATABASE < database_schema.sql
-   ```
-
-### Step 4: Access Your Live Site
-
-After deployment, your site will be available at:
-`https://your-site-name.netlify.app`
-
-## Test Accounts
-
-- **Agency**: contact@premiumcars.com / password
-- **Customer**: john.doe@email.com / password
-
-## Important Notes
-
-- Netlify Functions are not used (static PHP hosting)
-- Database connection uses environment variables
-- Error reporting is disabled for production
-- Security headers are configured
-
-## Troubleshooting
-
-If you get database connection errors:
-1. Check environment variables in Netlify dashboard
-2. Verify database is accessible from external connections
-3. Ensure database schema is imported correctly
+## Important Notes:
+- Free hosting has limitations (ads, bandwidth limits)
+- For production, consider paid hosting
+- Always backup your database regularly

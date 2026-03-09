@@ -1,0 +1,15 @@
+{
+    "name": "omjoshi/car-rental-system",
+    "description": "A comprehensive car rental management system",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "classmap": [
+            "models/",
+            "controllers/",
+            "config/"
+        ]
+    }
+}
