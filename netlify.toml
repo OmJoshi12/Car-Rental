@@ -1,0 +1,16 @@
+[build]
+  command = "echo 'Building PHP application...'"
+  publish = "."
+
+[build.environment]
+  PHP_VERSION = "8.2"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
+
+[[headers]]
+  for = "*.php"
+  [headers.values]
+    Content-Type = "text/html"
