@@ -6,6 +6,26 @@
   PHP_VERSION = "8.2"
 
 [[redirects]]
+  from = "/api/*"
+  to = "/api.php"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/index.php"
+  status = 200
+
+[[redirects]]
+  from = "/register"
+  to = "/index.php"
+  status = 200
+
+[[redirects]]
+  from = "/dashboard"
+  to = "/index.php"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.php"
   status = 200
@@ -14,3 +34,11 @@
   for = "*.php"
   [headers.values]
     Content-Type = "text/html"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
